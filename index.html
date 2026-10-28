@@ -968,14 +968,29 @@
     const closeModal = document.getElementById("closeModal");
     const openBtns = document.querySelectorAll(".open-modal-btn");
 
-    // ENVIO PARA O GOOGLE APPS SCRIPT E TELEGRAM
+    // ENVIO PARA O GOOGLE APPS SCRIPT E TELEGRAM COM BLOQUEADOR
     leadForm.addEventListener("submit", async function(e) {
       e.preventDefault();
 
       const nome = document.getElementById("inputName").value.trim();
-      const email = document.getElementById("inputEmail").value.trim();
+      const email = document.getElementById("inputEmail").value.trim().toLowerCase();
 
       if (!nome || !email) return;
+
+      // ========================================================
+      // 🛑 BLOQUEADOR DE E-MAILS REPETIDOS (NO NAVEGADOR)
+      // ========================================================
+      const emailsCadastrados = JSON.parse(localStorage.getItem("leads_enviados") || "[]");
+
+      if (emailsCadastrados.includes(email)) {
+        alert("⚠️ Este correo ya fue registrado anteriormente para el bono. Puedes continuar al registro oficial.");
+        // Redireciona direto para a página de bônus sem enviar repetido
+        leadStep.style.display = "none";
+        promoStep.style.display = "block";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
+      // ========================================================
 
       submitBtn.disabled = true;
       submitBtn.textContent = "VALIDANDO TU BONO...";
@@ -985,18 +1000,22 @@
           method: "POST",
           mode: "no-cors",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ nome: nome, email: email })
+          body: JSON.stringify({ nome: nome, email: email, pais: "Chile" })
         });
+
+        // Grava o e-mail no navegador para bloquear novas tentativas repetidas
+        emailsCadastrados.push(email);
+        localStorage.setItem("leads_enviados", JSON.stringify(emailsCadastrados));
+
       } catch (err) {
         console.warn("Solicitud enviada:", err);
       }
 
-      // Transição para o passo 2
+      // Transição para a landing page
       leadStep.style.display = "none";
       promoStep.style.display = "block";
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
-
     // CONTROLE DO MODAL POP-UP
     openBtns.forEach(btn => {
       btn.addEventListener("click", () => {
