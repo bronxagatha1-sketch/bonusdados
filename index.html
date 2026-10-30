@@ -82,7 +82,7 @@
       50% { transform: scale(1.05); }
     }
 
-    /* TOP BAR SOCIAL PROOF */
+    /* TOP BAR SOCIAL PROOF ARGENTINA */
     .top-strip {
       background: rgba(18, 14, 20, 0.95);
       border-bottom: 1px solid rgba(255, 196, 0, 0.3);
@@ -113,7 +113,7 @@
       animation: pulse 1.5s infinite;
     }
 
-    /* PASO 1: CAPTURA DO LEAD */
+    /* PASO 1: CAPTURA DO LEAD (NOME + WHATSAPP + +18) */
     #lead-step {
       display: flex;
       justify-content: center;
@@ -186,7 +186,8 @@
       letter-spacing: 0.05em;
     }
 
-    .input-group input {
+    .input-group input[type="text"],
+    .input-group input[type="tel"] {
       width: 100%;
       padding: 14px 16px;
       background: #09080a;
@@ -203,6 +204,36 @@
       box-shadow: 0 0 12px rgba(255, 104, 16, 0.4);
     }
 
+    /* CAIXA DE CONFIRMAÇÃO +18 */
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-align: left;
+      margin: 18px 0 20px;
+      padding: 12px 14px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .checkbox-group input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--green);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .checkbox-group label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #e5e0dc;
+      cursor: pointer;
+      line-height: 1.35;
+    }
+
     .btn-submit-lead {
       width: 100%;
       padding: 16px;
@@ -217,7 +248,6 @@
       letter-spacing: 0.04em;
       box-shadow: 0 5px 20px var(--green-glow);
       transition: all 0.25s;
-      margin-top: 10px;
     }
 
     .btn-submit-lead:hover {
@@ -237,7 +267,7 @@
       color: #8b8089;
     }
 
-    /* PASO 2: LANDING PAGE OFICIAL COM TEMÁTICA */
+    /* PASO 2: LANDING PAGE OFICIAL (ARGENTINA) */
     #promo-step {
       display: none;
       animation: fadeIn 0.8s ease-in-out;
@@ -435,7 +465,7 @@
       100% { transform: translateY(-10px); }
     }
 
-    /* SEÇÃO DE BENEFÍCIOS E PROVA SOCIAL */
+    /* SEÇÃO DE BENEFÍCIOS (ARGENTINA) */
     .landing-section {
       background: #0f0d12;
       padding: 60px 20px;
@@ -498,7 +528,7 @@
       line-height: 1.5;
     }
 
-    /* DEPOIMENTOS DA COMUNIDADE */
+    /* DEPOIMENTOS DA COMUNIDADE ARGENTINA */
     .testimonials-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -542,7 +572,7 @@
       font-style: italic;
     }
 
-    /* NOTIFICAÇÃO FLUTUANTE DE GANHADORES (LIVE POPUP) */
+    /* NOTIFICAÇÃO FLUTUANTE DE GANHADORES (ARGENTINA) */
     .live-win-toast {
       position: fixed;
       bottom: 25px;
@@ -710,25 +740,10 @@
     }
 
     /* ANIMAÇÕES */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes popIn {
-      from { opacity: 0; transform: scale(0.8); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.85); }
-    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes popIn { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }
+    @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.85); } }
 
     /* RESPONSIVIDADE */
     @media (max-width: 860px) {
@@ -736,27 +751,15 @@
         grid-template-columns: 1fr;
         text-align: center;
       }
-      .num-row {
-        justify-content: center;
-      }
-      .promo-desc {
-        margin: 0 auto 25px auto;
-      }
-      .character-img {
-        max-height: 380px;
-        margin-top: 25px;
-      }
+      .num-row { justify-content: center; }
+      .promo-desc { margin: 0 auto 25px auto; }
+      .character-img { max-height: 380px; margin-top: 25px; }
       .big-num { font-size: 120px; }
       .reward-giros { font-size: 48px; }
       .reward-gratis { font-size: 28px; }
       .main-heading .super { font-size: 34px; }
       .main-heading .halloween { font-size: 46px; }
-      .live-win-toast {
-        left: 10px;
-        right: 10px;
-        bottom: 10px;
-        justify-content: center;
-      }
+      .live-win-toast { left: 10px; right: 10px; bottom: 10px; justify-content: center; }
       .bat-animated { width: 80px; top: 20px; left: 3%; }
       .pumpkin-animated { width: 70px; }
     }
@@ -764,7 +767,7 @@
 </head>
 <body>
 
-  <!-- TOP BAR SOCIAL PROOF -->
+  <!-- TOP BAR SOCIAL PROOF ARGENTINA -->
   <div class="top-strip">
     <span><span class="live-dot"></span> +14.850 jugadores reclamaron su bono en Argentina</span>
     <span style="color: var(--yellow);">★ 4.9/5 Calificación de la Comunidad</span>
@@ -772,28 +775,33 @@
 
   <div class="hero-wrapper">
     <!-- ELEMENTOS TEMÁTICOS OFICIAIS -->
-    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh6HSUvFvG5NjqRlqE1zkShRrAAuqJjmxaLL7LATIyqSu9szDBn2poC9WnIBQMs0Qw3DYH973LPrT87rzLcmWoxoXvHmDfoSyKXaGWiafiaNijWc8k0cyhVXd2wB3FAyRkvUXfOXDM6R0YUEKXiSXc8LCH3eQU4M55hXJ_y6HdIHbecPgq5gWupDlWlhfk/s1600/Big%20Bass%20Halloween%20Splash%201000_Bat.gif" alt="Morcego" class="bat-animated">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh6HSUvFvG5NjqRlqE1zkShRrAAuqJjmxaLL7LATIyqSu9szDBn2poC9WnIBQMs0Qw3DYH973LPrT87rzLcmWoxoXvHmDfoSyKXaGWiafiaNijWc8k0cyhVXd2wB3FAyRkvUXfOXDM6R0YUEKXiSXc8LCH3eQU4M55hXJ_y6HdIHbecPgq5gWupDlWlhfk/s1600/Big%20Bass%20Halloween%20Splash%201000_Bat.gif" alt="Murciélago" class="bat-animated">
     
-    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi3xsvsi-IAkqScEyd8lxT1CqzkMY0mj49ZLss726btvqCQ-T4-T03iNz518-uFX3j-C6OQR_p3K-WpPBvVuHLBDW0y2v-cF9Ot3F7UXxjN9AinfGz02JreAGEiRna3Lhu-LamWK3uxN13amDEILa12NF91EhtZe68_5yu5GLqFCrOQANufTFlU7kHWDRw/s1600/Big%20Bass%20Halloween%20Splash%201000_Pumpkin.gif" alt="Abóbora" class="pumpkin-animated">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi3xsvsi-IAkqScEyd8lxT1CqzkMY0mj49ZLss726btvqCQ-T4-T03iNz518-uFX3j-C6OQR_p3K-WpPBvVuHLBDW0y2v-cF9Ot3F7UXxjN9AinfGz02JreAGEiRna3Lhu-LamWK3uxN13amDEILa12NF91EhtZe68_5yu5GLqFCrOQANufTFlU7kHWDRw/s1600/Big%20Bass%20Halloween%20Splash%201000_Pumpkin.gif" alt="Calabaza" class="pumpkin-animated">
 
-    <!-- PASO 1: CAPTURA DO LEAD COM CREDIBILIDADE -->
+    <!-- PASO 1: CAPTURA DO LEAD (NOME + WHATSAPP + +18) -->
     <section id="lead-step">
       <div class="lead-box">
         <span class="lead-tag">✦ EDICIÓN LIMITADA NOCHE DE BRUJAS ✦</span>
         <h1>ACTIVÁ TUS <span>80 GIROS</span> O <span>$10.000 ARS</span> GRATIS</h1>
         <p class="sub">
-          Completá tu nombre y el correo con el que vas a jugar. Acordate de usar <strong>el mismo correo</strong> al registrarte para que el sistema acredite tus giros sin demoras.
+          Ingresá tu primer nombre y tu WhatsApp para validar tu bono exclusivo de bienvenida al toque.
         </p>
 
         <form id="leadForm">
           <div class="input-group">
-            <label for="inputName">Nombre completo</label>
-            <input type="text" id="inputName" name="nome" placeholder="Ej: Lucas Gómez" required autocomplete="name">
+            <label for="inputName">Primer nombre</label>
+            <input type="text" id="inputName" name="nome" placeholder="Ej: Lucas" required autocomplete="given-name">
           </div>
 
           <div class="input-group">
-            <label for="inputEmail">Correo electrónico oficial</label>
-            <input type="email" id="inputEmail" name="email" placeholder="tu-email@gmail.com" required autocomplete="email">
+            <label for="inputPhone">Número de WhatsApp / Teléfono</label>
+            <input type="tel" id="inputPhone" name="phone" placeholder="+54 9 11 2345 6789" required autocomplete="tel">
+          </div>
+
+          <div class="checkbox-group">
+            <input type="checkbox" id="checkAge" required>
+            <label for="checkAge">Confirmo que soy mayor de 18 años y acepto recibir mi bono promocional.</label>
           </div>
 
           <button type="submit" id="submitBtn" class="btn-submit-lead">
@@ -809,7 +817,7 @@
       </div>
     </section>
 
-    <!-- PASO 2: LANDING PAGE COMPLETA DE CONVERSÃO -->
+    <!-- PASO 2: LANDING PAGE OFICIAL (ARGENTINA) -->
     <section id="promo-step">
       <div class="poster-inner">
         <header class="top-nav">
@@ -834,7 +842,7 @@
             </div>
             <div class="tag-daily">¡¡TODOS LOS DÍAS!!</div>
             <p class="promo-desc">
-              Completá tu registro oficial en DadosBET con el correo que ingresaste recién y comenzá a girar con tu saldo o jugadas bonificadas en Big Bass Splash 1000.
+              Completá tu registro oficial en DadosBET y comenzá a girar con tu saldo o jugadas bonificadas en Big Bass Splash 1000.
             </p>
             <button class="btn-hero-action open-modal-btn">
               ACCEDÉ ACÁ
@@ -848,7 +856,7 @@
         </div>
       </div>
 
-      <!-- INFORMAÇÕES EXTRAS, VANTAGENS E PROVA SOCIAL -->
+      <!-- INFORMAÇÕES EXTRAS, VANTAGENS E PROVA SOCIAL ARGENTINA -->
       <div class="landing-section">
         <div class="section-container">
           <h2 class="section-title">¿POR QUÉ ELEGIR <span>DADOSBET</span>?</h2>
@@ -857,19 +865,19 @@
             <div class="benefit-card">
               <div class="benefit-icon">🎁</div>
               <h3>Bono de Bienvenida</h3>
-              <p>Reclamá 80 giros o $10.000 ARS bonificados para empezar con el pie derecho sin riesgos innecesarios.</p>
+              <p>Reclamá 80 giros o $10.000 ARS bonificados para empezar con saldo a tu favor de entrada.</p>
             </div>
 
             <div class="benefit-card">
               <div class="benefit-icon">⚡</div>
-              <h3>Retiros al Instante</h3>
-              <p>Pagos acreditados al momento directo por Mercado Pago, Cuenta DNI, Brubank o transferencia bancaria.</p>
+              <h3>Retiros al Toque</h3>
+              <p>Pagos acreditados al instante por Mercado Pago, Cuenta DNI, Brubank o transferencia bancaria.</p>
             </div>
 
             <div class="benefit-card">
               <div class="benefit-icon">🛡️</div>
-              <h3>100% Seguro y Transparente</h3>
-              <p>Comunidad verificada con soporte dedicado por Telegram disponible las 24 horas del día.</p>
+              <h3>Soporte Dedicado 24/7</h3>
+              <p>Atención directa y personalizada en nuestro canal exclusivo de Telegram para jugadores de Argentina.</p>
             </div>
           </div>
 
@@ -883,7 +891,7 @@
                 </div>
                 <div class="test-stars">★★★★★</div>
               </div>
-              <p class="test-comment">"Pensé que era chamuyo lo de los giros, pero me registré con el mismo mail y me los cargaron al toque. Retiré por Mercado Pago sin vueltas."</p>
+              <p class="test-comment">"Pensé que era chamuyo lo de los giros, pero me registré y me los cargaron al toque. Retiré por Mercado Pago sin vueltas."</p>
             </div>
 
             <div class="testimonial-card">
@@ -913,7 +921,7 @@
     </section>
   </div>
 
-  <!-- NOTIFICAÇÃO FLUTUANTE DE GANHADORES (PROVA SOCIAL DINÂMICA) -->
+  <!-- NOTIFICAÇÃO FLUTUANTE DE GANHADORES (ARGENTINA) -->
   <div id="winToast" class="live-win-toast">
     <div class="win-avatar">🎰</div>
     <div class="win-info">
@@ -922,7 +930,7 @@
     </div>
   </div>
 
-  <!-- MODAL DE REDIRECIONAMENTO -->
+  <!-- MODAL DE REDIRECIONAMENTO (ARGENTINA) -->
   <div id="actionModal" class="modal-backdrop">
     <div class="modal-box">
       <button class="btn-close-modal" id="closeModal">&times;</button>
@@ -932,6 +940,7 @@
       </p>
 
       <div class="modal-buttons">
+        <!-- TELEGRAM ARGENTINA -->
         <a href="https://t.me/Dadosbet1" target="_blank" rel="noopener noreferrer" class="btn-choice btn-telegram">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.56 8.16l-1.97 9.28c-.15.65-.53.81-1.08.5l-3-2.21-1.45 1.4c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.22-.05-.34-.38-.13l-6.87 4.33-2.95-.92c-.64-.2-.65-.64.13-.95l11.53-4.45c.53-.2 1 .12.87.87z"/>
@@ -939,6 +948,7 @@
           HABLAR CON ATENCIÓN AL CLIENTE
         </a>
 
+        <!-- SITE ARGENTINA -->
         <a href="https://www.dbapuesta.com/" target="_blank" rel="noopener noreferrer" class="btn-choice btn-direct">
           IR DIRECTO AL REGISTRO WEB
         </a>
@@ -950,13 +960,14 @@
   <footer class="footer-strip">
     <div class="age-badge">18+</div>
     <div style="font-size: 11px; color: var(--text-muted); text-align: center;">
-      Promoción válida para mayores de 18 años. Jugá con responsabilidad.
+      Promoción válida para mayores de 18 años residentes en Argentina. Jugá con responsabilidad.
     </div>
     <div class="brand-title">DADOS<span>BET</span></div>
   </footer>
 
   <!-- LÓGICA JAVASCRIPT -->
   <script>
+    // URL DO SEU APPS SCRIPT
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyvCmK292sQPoELI-dJNbsxrnS2KoNKnxO1AOGS9rd4EcA2_mfdJj1aO7J9VSUI_wJs/exec";
 
     const leadStep = document.getElementById("lead-step");
@@ -968,23 +979,30 @@
     const closeModal = document.getElementById("closeModal");
     const openBtns = document.querySelectorAll(".open-modal-btn");
 
-    // ENVIO PARA O GOOGLE APPS SCRIPT E TELEGRAM COM BLOQUEADOR
+    // ENVIO PARA O GOOGLE APPS SCRIPT COM BLOQUEADOR POR NÚMERO
     leadForm.addEventListener("submit", async function(e) {
       e.preventDefault();
 
-      const nome = document.getElementById("inputName").value.trim();
-      const email = document.getElementById("inputEmail").value.trim().toLowerCase();
+      // Pega o primeiro nome
+      const rawName = document.getElementById("inputName").value.trim();
+      const firstName = rawName.split(" ")[0];
 
-      if (!nome || !email) return;
+      // Pega e normaliza o telefone
+      const rawPhone = document.getElementById("inputPhone").value.trim();
+      const cleanPhone = rawPhone.replace(/\D/g, "");
+
+      if (!firstName || cleanPhone.length < 8) {
+        alert("Por favor ingresá un número de teléfono o WhatsApp válido.");
+        return;
+      }
 
       // ========================================================
-      // 🛑 BLOQUEADOR DE E-MAILS REPETIDOS (NO NAVEGADOR)
+      // 🛑 BLOQUEADOR DE NÚMEROS REPETIDOS NO NAVEGADOR
       // ========================================================
-      const emailsCadastrados = JSON.parse(localStorage.getItem("leads_enviados") || "[]");
+      const telefonesCadastrados = JSON.parse(localStorage.getItem("leads_telefones_arg") || "[]");
 
-      if (emailsCadastrados.includes(email)) {
-        alert("⚠️ Este correo ya fue registrado anteriormente para el bono. Puedes continuar al registro oficial.");
-        // Redireciona direto para a página de bônus sem enviar repetido
+      if (telefonesCadastrados.includes(cleanPhone)) {
+        alert("⚠️ Este número ya fue registrado para la promoción. Te redirigimos al registro oficial.");
         leadStep.style.display = "none";
         promoStep.style.display = "block";
         window.scrollTo({ top: 0, behavior: "smooth" });
@@ -996,26 +1014,32 @@
       submitBtn.textContent = "VALIDANDO TU BONO...";
 
       try {
+        // Enviamos o telefone no campo 'email' para gravar na planilha sem precisar alterar o código .gs
         await fetch(SCRIPT_URL, {
           method: "POST",
           mode: "no-cors",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ nome: nome, email: email, pais: "Chile" })
+          body: JSON.stringify({ 
+            nome: firstName, 
+            email: rawPhone, 
+            pais: "Argentina" 
+          })
         });
 
-        // Grava o e-mail no navegador para bloquear novas tentativas repetidas
-        emailsCadastrados.push(email);
-        localStorage.setItem("leads_enviados", JSON.stringify(emailsCadastrados));
+        // Salva na memória do navegador para não permitir reenvio
+        telefonesCadastrados.push(cleanPhone);
+        localStorage.setItem("leads_telefones_arg", JSON.stringify(telefonesCadastrados));
 
       } catch (err) {
         console.warn("Solicitud enviada:", err);
       }
 
-      // Transição para a landing page
+      // Transição para o passo 2
       leadStep.style.display = "none";
       promoStep.style.display = "block";
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
+
     // CONTROLE DO MODAL POP-UP
     openBtns.forEach(btn => {
       btn.addEventListener("click", () => {
@@ -1033,7 +1057,7 @@
       }
     });
 
-    // SIMULAÇÃO DE FEED DE GANHOS REAIS (PROVA SOCIAL)
+    // SIMULAÇÃO DE FEED DE GANHOS REAIS (ARGENTINA)
     const recentWins = [
       { user: "Facundo G. (Córdoba)", amount: "$42.800 ARS" },
       { user: "Agustina D. (Buenos Aires)", amount: "$75.200 ARS" },
